@@ -6,7 +6,7 @@ import com.credit.suisse.javaTest.model.EventRecord;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 import static com.credit.suisse.javaTest.model.EventState.STARTED;
 
 @Slf4j
-@Component
+@Service
 public class EventParser {
 
     private LogDAO logDAO;
