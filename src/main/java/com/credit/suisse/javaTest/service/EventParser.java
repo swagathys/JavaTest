@@ -53,6 +53,7 @@ public class EventParser {
                 record.setEndTime(Long.valueOf((event.getTimestamp())));
             }
             if (record.getStartTime() != null && record.getEndTime() != null) {
+                log.debug("startTime and endTime both available for {}", record.getId());
                 record.setTotalTime(record.getEndTime() - record.getStartTime());
                 record.setAlert(record.getTotalTime() > 4);
             }
