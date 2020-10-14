@@ -37,6 +37,6 @@ public class EventParserTests {
         File file = new File(EventParserTests.class.getClassLoader().getResource("logfile.txt").getFile());
         parser.parse(file);
         List<EventRecord> allLogs = logDAO.getAllLogs();
-        Assert.assertEquals(2, allLogs.size());
+        Assert.assertEquals(3, allLogs.size());
     }
 }

@@ -34,8 +34,7 @@ public class EventParser {
         ObjectMapper mapper = new ObjectMapper();
         Map<String, EventRecord> recordMap = new HashMap<>();
         generateEventMap(sc, mapper, recordMap);
-        //filter by alert and then add it to table
-        logDAO.addAlert(recordMap.values().stream().filter(r -> r.isAlert()).collect(Collectors.toList()));
+        logDAO.addAlert(recordMap.values().stream().collect(Collectors.toList()));
     }
 
     private void generateEventMap(Scanner sc, ObjectMapper mapper, Map<String, EventRecord> recordMap) throws IOException {
